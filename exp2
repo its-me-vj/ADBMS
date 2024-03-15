@@ -1,0 +1,24 @@
+1. create table persons(PersonId int(5) primary key, Name varchar(25) not null,Adhaar numeric(12) unique,Age int(2) check(age>18));
+2. create table orders(OrderId varchar(5) primary key, OrderNumber int(5) not null,PersonID int,foreign key(PersonId) references persons(PersonId));
+3. desc persons;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| PersonId | int           | NO   | PRI | NULL    |       |
+| Name     | varchar(25)   | NO   |     | NULL    |       |
+| Adhaar   | decimal(12,0) | YES  | UNI | NULL    |       |
+| Age      | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+4. desc orders;
++-------------+------------+------+-----+---------+-------+
+| Field       | Type       | Null | Key | Default | Extra |
++-------------+------------+------+-----+---------+-------+
+| OrderId     | varchar(5) | NO   |     | NULL    |       |
+| OrderNumber | int        | NO   |     | NULL    |       |
+| PersonID    | int        | YES  | MUL | NULL    |       |
++-------------+------------+------+-----+---------+-------+
+5. alter table employee add primary key(emp_no);
+6. alter table department  add primary key(dept_no);
+7. alter table employee add foreign key(dept_no) references department (dept_no);
+8. alter table orders drop primary key;
+

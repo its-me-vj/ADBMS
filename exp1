@@ -1,0 +1,31 @@
+1. create database college;
+2. use college;
+3. create table student(roll_no int primary key,name varchar(25),dob date,address   varchar(30),phone_no varchar(10),blood_grp varchar(5));
+4. create table course(course_id  int primary key,course_name varchar(25),course_duration int);
+4. show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| course            |
+| student           |
++-------------------+
+5.  desc student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| roll_no   | int         | NO   | PRI | NULL    |       |
+| name      | varchar(25) | YES  |     | NULL    |       |
+| dob       | date        | YES  |     | NULL    |       |
+| address   | varchar(30) | YES  |     | NULL    |       |
+| phone_no  | varchar(10) | YES  |     | NULL    |       |
+| blood_grp | varchar(5)  | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6.alter table student drop column blood_grp;
+7.alter table student add adar_no int;
+8.alter table student modify phone_no int;
+9.drop table student;
+drop table course;
+10. drop database college;
+
+
+
