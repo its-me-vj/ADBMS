@@ -1,0 +1,223 @@
+1. mysql> insert into department values('1','sales','chngr');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department values('2','hr','pta');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into department values('3','service','pta');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into department values('4','marketing','chngr');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into department values('5','finance','konni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into department values('6','promotion','uk');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department values('7','head','uk');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department values('8','accounting','japan');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department values('9','transport','tokyo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into department values('10','study','japan');
+
+
+mysql> insert into employee values('30','Vijay','1999-03-1','Vijay villa','9898767666','7','60000');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into employee values('31','Vishnu','1997-05-4','Vishnu villa','98987566','8','200000');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into employee values('32','Vishali','1997-06-4','Vishali villa',898987566','5','300000');
+mysql> insert into employee values('33','Ajay','1997-06-5','Ajay  villa','668987566','6','300000');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values('34','Manu','1998-07-4','Manu  villa','668987566','7','300000');
+insert into employee values('35','Anu','2000-07-4','Anu  villa','658987566','9','300000');
+2.
+
+select * from department;
++---------+------------+----------+
+| dept_no | dept_name  | location |
++---------+------------+----------+
+| 1       | sales      | chngr    |
+| 10      | study      | japan    |
+| 2       | hr         | pta      |
+| 3       | service    | pta      |
+| 4       | marketing  | chngr    |
+| 5       | finance    | konni    |
+| 6       | promotion  | uk       |
+| 7       | head       | uk       |
+| 8       | accounting | japan    |
+| 9       | transport  | tokyo    |
++---------+------------+----------+ 
+select * from employee;
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| emp_no | emp_name | dob        | address       | mobile_no  | dept_no | salary | designation |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| 30     | Vijay    | 1999-03-01 | Vijay villa   | 9898767666 | 7       |  60000 | devoloper   |
+| 31     | Vishnu   | 1997-05-04 | Vishnu villa  | 98987566   | 8       | 200000 | tester      |
+| 32     | Vishali  | 1997-06-04 | Vishali villa | 898987566  | 5       | 300000 | tester      |
+| 33     | Ajay     | 1997-06-05 | Ajay  villa   | 668987566  | 6       | 300000 | devoloper   |
+| 34     | Manu     | 1998-07-04 | Manu  villa   | 668987566  | 7       | 300000 | devoloper   |
+| 35     | Anu      | 2000-07-04 | Anu  villa    | 658987566  | 9       | 300000 | tester      |
+| 36     | Rocky    | 1996-01-01 | kgf           | 97975566   | D02     | 500000 | ceo         |
+| 37     | salar    | 2002-01-01 | khansar       | 97975556   | D02     |   5000 | md          |
+| 38     | vichu    | 2001-01-01 | mansion       | 98975556   | D02     |   2000 | ceo         |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+
+
+3. select emp_no,emp_name from employee where dept_no='D02';
++--------+----------+
+| emp_no | emp_name |
++--------+----------+
+| 36     | Rocky    |
++--------+----------+
+4.+--------+----------+------------+---------------+------------+---------+--------+-------------+
+| emp_no | emp_name | dob        | address       | mobile_no  | dept_no | salary | designation |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| 30     | Vijay    | 1999-03-01 | Vijay villa   | 9898767666 | 7       |  60000 | devoloper   |
+| 31     | Vishnu   | 1997-05-04 | Vishnu villa  | 98987566   | 8       | 200000 | tester      |
+| 32     | Vishali  | 1997-06-04 | Vishali villa | 898987566  | 5       | 300000 | tester      |
+| 33     | Ajay     | 1997-06-05 | Ajay  villa   | 668987566  | 6       | 300000 | devoloper   |
+| 34     | Manu     | 1998-07-04 | Manu  villa   | 668987566  | 7       | 300000 | devoloper   |
+| 35     | Anu      | 2000-07-04 | Anu  villa    | 658987566  | 9       | 300000 | tester      |
+| 36     | Rocky    | 1996-01-01 | kgf           | 97975566   | D02     | 500000 | ceo         |
+| 37     | salar    | 2002-01-01 | khansar       | 97975556   | D02     |   5000 | md          |
+| 38     | vichu    | 2001-01-01 | mansion       | 98975556   | D02     |   2000 | ceo         |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+
+
+5. select emp_no,emp_name from employee where salary between 2000 and 50000;
++--------+----------+
+| emp_no | emp_name |
++--------+----------+
+| 37     | salar    |
+| 38     | vichu    |
++--------+----------+
+6. select distinct  designation from employee;
++-------------+
+| designation |
++-------------+
+| devoloper   |
+| tester      |
+| ceo         |
+| md          |
++-------------+
+7. update  employee set salary='45000' where designation='manager';
+8. update  employee set mobile_no='7788996566' where  emp_name='john';
+9.delete from employee where salary='7000';
+10. select emp_name,mobile_no from employee where emp_name like 'A%';
++----------+-----------+
+| emp_name | mobile_no |
++----------+-----------+
+| Ajay     | 668987566 |
+| Anu      | 658987566 |
++----------+-----------+
+
+11. select *from employee where length(emp_name)>=3 and salary>2000;
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| emp_no | emp_name | dob        | address       | mobile_no  | dept_no | salary | designation |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| 30     | Vijay    | 1999-03-01 | Vijay villa   | 9898767666 | 7       |  60000 | devoloper   |
+| 31     | Vishnu   | 1997-05-04 | Vishnu villa  | 98987566   | 8       | 200000 | tester      |
+| 32     | Vishali  | 1997-06-04 | Vishali villa | 898987566  | 5       | 300000 | tester      |
+| 33     | Ajay     | 1997-06-05 | Ajay  villa   | 668987566  | 6       | 300000 | devoloper   |
+| 34     | Manu     | 1998-07-04 | Manu  villa   | 668987566  | 7       |  45000 | manager     |
+| 35     | Anu      | 2000-07-04 | Anu  villa    | 658987566  | 9       | 300000 | tester      |
+| 36     | Rocky    | 1996-01-01 | kgf           | 97975566   | D02     | 500000 | ceo         |
+| 37     | salar    | 2002-01-01 | khansar       | 97975556   | D02     |   5000 | md          |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+12. select * from employee where emp_no in('emp1','emp2','emp3');
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| emp_no | emp_name | dob        | address       | mobile_no  | dept_no | salary | designation |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+| emp1   | Vijay    | 1999-03-01 | Vijay villa   | 9898767666 | 7       |  60000 | devoloper   |
+| emp2   | Vishnu   | 1997-05-04 | Vishnu villa  | 98987566   | 8       | 200000 | tester      |
+| emp3   | Vishali  | 1997-06-04 | Vishali villa | 898987566  | 5       | 300000 | tester      |
++--------+----------+------------+---------------+------------+---------+--------+-------------+
+13. select emp_name ,emp_no from employee where salary between 12000 and 30000;
++----------+--------+
+| emp_name | emp_no |
++----------+--------+
+| Manu     | 34     |
+| Anu      | 35     |
+| john     | 38     |
+| Vishali  | emp3   |
++----------+--------+
+14. select * from employee where designation='manager' or 'computer assistant';
+ +--------+----------+------------+-------------+-----------+---------+--------+-------------+
+| emp_no | emp_name | dob        | address     | mobile_no | dept_no | salary | designation |
++--------+----------+------------+-------------+-----------+---------+--------+-------------+
+| 34     | Manu     | 1998-07-04 | Manu  villa | 668987566 | 7       |  14000 | manager     |
++--------+----------+------------+-------------+-----------+---------+--------+-------------+
+15. select dept_no, count(*) as no_of_employees from employee group by dept_no;
++---------+-----------------+
+| dept_no | no_of_employees |
++---------+-----------------+
+| 5       |               1 |
+| 6       |               1 |
+| 7       |               2 |
+| 8       |               1 |
+| 9       |               1 |
+| D02     |               3 |
++---------+-----------------+
+16. select dept_no , avg(salary)as avg_salary  from employee group by dept_no;
++---------+-------------+
+| dept_no | avg_salary  |
++---------+-------------+
+| 5       |  12000.0000 |
+| 6       | 300000.0000 |
+| 7       |  37000.0000 |
+| 8       | 200000.0000 |
+| 9       |  13000.0000 |
+| D02     | 178333.3333 |
++---------+-------------+
+17.select dept_no , sum(salary)as tot_salary  from employee group by dept_no;
++---------+------------+
+| dept_no | tot_salary |
++---------+------------+
+| 5       |      12000 |
+| 6       |     300000 |
+| 7       |      74000 |
+| 8       |     200000 |
+| 9       |      13000 |
+| D02     |     535000 |
++---------+------------+
+18. select dept_no , max(salary)as max_salary,min(salary)as min_salary from employee group by dept_no;
++---------+------------+------------+
+| dept_no | max_salary | min_salary |
++---------+------------+------------+
+| 5       |      12000 |      12000 |
+| 6       |     300000 |     300000 |
+| 7       |      60000 |      14000 |
+| 8       |     200000 |     200000 |
+| 9       |      13000 |      13000 |
+| D02     |     500000 |       5000 |
++---------+------------+------------+
+19. select avg(salary)as Avg_salary from employee  where dept_no!='D05';
++-------------+
+| Avg_salary  |
++-------------+
+| 134250.0000 |
++-------------+
+20. select dept_no ,avg(salary)as Avg_salary from employee  where dept_no!='D01' group by dept_no having Avg_salary>20000 order by Avg_salary asc ;
++---------+-------------+
+| dept_no | Avg_salary  |
++---------+-------------+
+| D05     |  60000.0000 |
+| D02     | 178333.3333 |
+| 8       | 200000.0000 |
+| 6       | 300000.0000 |
++---------+-------------+
+
+
+
+
+
